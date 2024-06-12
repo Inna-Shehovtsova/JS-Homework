@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homework 7</title>
+</head>
+<body>
+<h2>Домашняя работа 7</h2>
+<div class="data">
+<p>Сверстать страницу и подключить к ней файл со
+    скриптом. На странице должны быть три текстовых
+    параграфа, поле ввода и кнопка. Напишите скрипт,
+    который будет выполнять следующие условия:</p>
+<p>1.Кнопка скрыта, если в поле ввода нет значения.</p>
+<p>2.При клике на кнопку добавляется новый параграф,
+    содержащий текст из поля ввода.</p>
+<p>3.*Если параграфов становится больше 5, первый из
+    них удаляется.</p>
+</div>
+<input type="text" class='input-text' oninput="checkInput()"/>
+<button class="add-paragraph" onclick="buttonClick()" hidden = 'true'>Добавить</button>
+<!-- <script src="./script1.js"></script> -->
+<script src="./src/base-homework7.js"></script>
+</body>
+</html>
