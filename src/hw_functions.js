@@ -247,11 +247,11 @@ export function getYounger(user1, user2) {
 
   if (date1 - date2 > 0) {
     return `first is younger`;
-  } if (date1 - date2 < 0) {
+  }
+  if (date1 - date2 < 0) {
     return `second is younger`;
-  } 
-    return `first and second are same age`;
-  
+  }
+  return `first and second are same age`;
 }
 
 //-----------------------------------------
