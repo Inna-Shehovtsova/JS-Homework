@@ -13,5 +13,6 @@ module.exports = {
     "linebreak-style": "off",
     "max-len": ["error", { ignoreComments: true }],
     "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+    "no-shadow": "off",
   },
 };
