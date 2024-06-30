@@ -17,12 +17,7 @@ export function arrElSum(arr) {
  *  @returns {arr2}
  */
 export function doubleArr(arr) {
-  let arr2 = [].concat(arr);
-  arr2 = arr2.map((el) => {
-    const newVal = el * 2;
-    return newVal;
-  });
-  return arr2;
+  return arr.map((item) => item * 2);
 }
 /**
  * Найдите наибольший и наименьший элементы массива
