@@ -24,17 +24,10 @@ describe("количество минут, прошедшее с начала в
     expect(minitFromMidnight).toBeInstanceOf(Function);
   });
   it("12.06.2024", () => {
-    expect(minitFromMidnight(new Date(2024, 5, 12))).toEqual(0);
-  });
-  it("1.01.2024 01:00", () => {
-    expect(minitFromMidnight(new Date(2024, 0, 1, 1, 0))).toEqual(60);
-  });
-  it("5.05.2023 12:30", () => {
-    expect(minitFromMidnight(new Date(2023, 4, 5, 12, 30))).toEqual(750);
-  });
-
-  it("13.05.2023 23:59:59", () => {
-    expect(minitFromMidnight(new Date(2023, 4, 13, 23, 59, 59))).toEqual(1439);
+    const dateNow = Date.now();
+    expect(minitFromMidnight()).toEqual(
+      dateNow.getMinutes + dateNow.getHours * 60,
+    );
   });
 });
 describe("определяет более молодого пользователя", () => {

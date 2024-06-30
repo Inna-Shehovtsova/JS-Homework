@@ -31,10 +31,11 @@ export function dayOfWeek(userdate) {
  * Или с введенной даты
  * @returns
  */
-export function minitFromMidnight(now = new Date()) {
-  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const differ = Math.trunc((now - midnight) / 60000);
-  return differ;
+export function minitFromMidnight() {
+  // const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  // const differ = Math.trunc((now - midnight) / 60000);
+  const dateNow = Date.now();
+  return dateNow.getMinutes + dateNow.getHours * 60;
 }
 
 //-----------------------------------------
