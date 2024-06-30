@@ -23,11 +23,10 @@ export function mul7Show() {
  */
 export function avgSumOdd(N) {
   let sum2 = 0;
-  let count = 0;
+  const count = Math.ceil(N / 2);
 
   for (let i = 1; i <= N; i += 2) {
     sum2 = i + sum2;
-    count += 1;
   }
   return sum2 / count;
 }
