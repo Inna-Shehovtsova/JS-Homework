@@ -17,7 +17,7 @@ export function diff(a, b) {
  * @returns
  */
 export function isWord(str) {
-  const res = str.split(" ");
+  const res = str.trim().split(" ");
   if (res.length > 1 || str.length < 1) return false;
   return true;
 }

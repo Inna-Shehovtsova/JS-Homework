@@ -34,6 +34,9 @@ describe("isWord true если строка состоит из одного с�
   it("isWord '2 , -2'", () => {
     expect(isWord("2 , -2")).toBeFalsy();
   });
+  it("isWord ' f'", () => {
+    expect(isWord(" f")).toBeTruthy();
+  });
 });
 
 describe(" pow (a,b) - а в степени b", () => {
