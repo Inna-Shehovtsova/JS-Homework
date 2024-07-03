@@ -16,9 +16,9 @@ describe("Кнопка появляется", () => {
     const input = divApp.querySelector(".input-text");
     input.value = "some text";
     expect(input.value).toBe("some text");
-    // input.dispatchEvent(new KeyboardEvent('keydown', {'key': 'A'}));
+    input.dispatchEvent(new KeyboardEvent("input"));
     // expect(input.value).toBe('A');
-    // expect(button.hidden).toBeFalsy();
+    expect(button.hidden).toBeFalsy();
   });
   it("add paragraph", () => {
     divApp.querySelector(".input-text").value = "some text";
@@ -29,7 +29,7 @@ describe("Кнопка появляется", () => {
     expect(divApp.querySelector(".data p")).toBeTruthy();
     expect(divApp.querySelector(".input-text").value).toBe("");
     divApp.querySelector(".input-text").value = "some text2";
-    // expect(divApp.querySelector(".data p").innerHTML).toBe("some text");
+    expect(divApp.querySelector(".data p").innerHTML).toBe("some text");
   });
 
   it("add paragraph 5", () => {

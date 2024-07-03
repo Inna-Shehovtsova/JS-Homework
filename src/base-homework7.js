@@ -23,7 +23,7 @@ export function createUI(el) {
   });
   btn.addEventListener("click", () => {
     const par = document.createElement("p");
-    par.innerText = input.value;
+    par.innerHTML = input.value;
     const data = el.querySelector(".data");
     data.append(par);
     input.value = "";
