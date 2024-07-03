@@ -7,36 +7,29 @@
 содержащий текст из поля ввода.
 3.*Если параграфов становится больше 5, первый из
 них удаляется. */
-export function buttonAppear(val) {
-  const button = document.querySelector(".add-paragraph");
-  button.hidden = !val;
-}
-export function clearInput() {
-  const text = document.querySelector(".input-text");
-  text.value = "";
-  buttonAppear(false);
-}
-export function removeParagraph() {
-  const plist = document.querySelectorAll("p");
-  if (plist.length > 5) {
-    plist[0].remove();
-  }
-}
-export function buttonClick() {
-  const text = document.querySelector(".input-text");
-  const par = document.createElement("p");
 
-  par.innerText = text.value;
-  const data = document.querySelector(".data");
-  data.append(par);
-  clearInput();
-  removeParagraph();
-}
-export function checkInput() {
-  const text = document.querySelector(".input-text");
-  if (text.value.length > 0) {
-    buttonAppear(true);
-  } else {
-    buttonAppear(false);
-  }
+export function createUI(el) {
+  el.innerHTML = `<div class="data"></div><input type="text" 
+  class='input-text' "/><button class="add-paragraph"  
+  hidden = 'true'>Добавить</button>`;
+  const input = el.querySelector(".input-text");
+  const btn = el.querySelector(".add-paragraph");
+  input.addEventListener("input", () => {
+    if (input.value.length > 0) {
+      btn.hidden = false;
+    } else {
+      btn.hidden = true;
+    }
+  });
+  btn.addEventListener("click", () => {
+    const par = document.createElement("p");
+    par.innerHTML = input.value;
+    const data = el.querySelector(".data");
+    data.append(par);
+    input.value = "";
+    const plist = el.querySelectorAll(".data p");
+    if (plist.length > 5) {
+      plist[0].remove();
+    }
+  });
 }
